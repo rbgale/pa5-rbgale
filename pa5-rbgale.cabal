@@ -1,0 +1,27 @@
+cabal-version:      3.0
+name:               pa5-rbgale
+version:            0.1.0.0
+license:            BSD-3-Clause
+license-file:       LICENSE
+author:             Richard Gale
+maintainer:         rgale129@gmail.com
+build-type:         Simple
+extra-doc-files:    CHANGELOG.md
+
+common warnings
+    ghc-options: -Wall
+
+library
+    build-depends:    array ^>=0.5.8.0, containers ^>=0.8, base ^>=4.22.0.0
+    hs-source-dirs:   src
+    exposed-modules:
+        Probability,
+        RollingStones
+    default-language: Haskell2010
+
+executable pa5-rbgale
+    import:           warnings
+    main-is:          Main.hs
+    build-depends:    pa5-rbgale, base ^>=4.22.0.0
+    hs-source-dirs:   app
+    default-language: Haskell2010
